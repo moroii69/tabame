@@ -304,9 +304,9 @@ class Win32 {
     if (classMethod) return await moveWindowToDesktopMethod(hWnd: hWnd, direction: direction);
     String key = "RIGHT";
     if (direction == DesktopDirection.left) key = "LEFT";
-    await setSkipTaskbar(hWnd: hWnd, skip: true);
-    WinKeys.send("{#WIN}{#CTRL}{$key}");
     await setSkipTaskbar(hWnd: hWnd, skip: false);
+    WinKeys.send("{#WIN}{#CTRL}{$key}");
+    await setSkipTaskbar(hWnd: hWnd, skip: true);
     return true;
   }
 

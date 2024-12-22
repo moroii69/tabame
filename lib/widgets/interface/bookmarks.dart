@@ -186,7 +186,7 @@ class BookmarksPageState extends State<BookmarksPage> {
                                                   setState(() {});
                                                   Navigator.of(context).pop();
                                                 },
-                                                child: Text("Delete", style: TextStyle(color: Theme.of(context).backgroundColor)),
+                                                child: Text("Delete", style: TextStyle(color: Theme.of(context).colorScheme.background)),
                                               ),
                                               ElevatedButton(
                                                 onPressed: () async {
@@ -196,7 +196,7 @@ class BookmarksPageState extends State<BookmarksPage> {
                                                   setState(() {});
                                                   Navigator.of(context).pop();
                                                 },
-                                                child: Text("Save", style: TextStyle(color: Theme.of(context).backgroundColor)),
+                                                child: Text("Save", style: TextStyle(color: Theme.of(context).colorScheme.background)),
                                               ),
                                             ],
                                           );
@@ -393,7 +393,7 @@ class BookmarksPageState extends State<BookmarksPage> {
                                                   setState(() {});
                                                   Navigator.of(context).pop();
                                                 },
-                                                child: Text("Delete", style: TextStyle(color: Theme.of(context).backgroundColor)),
+                                                child: Text("Delete", style: TextStyle(color: Theme.of(context).colorScheme.background)),
                                               ),
                                               ElevatedButton(
                                                 onPressed: () async {
@@ -404,7 +404,7 @@ class BookmarksPageState extends State<BookmarksPage> {
                                                   setState(() {});
                                                   Navigator.of(context).pop();
                                                 },
-                                                child: Text("Save", style: TextStyle(color: Theme.of(context).backgroundColor)),
+                                                child: Text("Save", style: TextStyle(color: Theme.of(context).colorScheme.background)),
                                               ),
                                             ],
                                           );

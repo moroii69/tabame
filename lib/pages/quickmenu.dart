@@ -388,12 +388,12 @@ class QuickMenuState extends State<QuickMenu> with TabameListener, QuickMenuTrig
                         color: globalSettings.themeTypeMode == ThemeType.dark ? Colors.white : Colors.black,
                         child: Container(
                           decoration: BoxDecoration(
-                              color: Theme.of(context).backgroundColor,
+                              color: Theme.of(context).colorScheme.background,
                               gradient: LinearGradient(
                                 colors: <Color>[
-                                  Theme.of(context).backgroundColor,
-                                  Theme.of(context).backgroundColor.withAlpha(globalSettings.themeColors.gradientAlpha),
-                                  Theme.of(context).backgroundColor,
+                                  Theme.of(context).colorScheme.background,
+                                  Theme.of(context).colorScheme.background.withAlpha(globalSettings.themeColors.gradientAlpha),
+                                  Theme.of(context).colorScheme.background,
                                 ],
                                 stops: <double>[0, 0.4, 1],
                                 end: Alignment.bottomRight,

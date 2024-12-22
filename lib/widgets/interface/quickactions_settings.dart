@@ -179,7 +179,7 @@ class QuickActionEditState extends State<QuickActionEdit> {
                       const Icon(Icons.save),
                       Text(
                         "Save",
-                        style: TextStyle(color: Theme.of(context).backgroundColor),
+                        style: TextStyle(color: Theme.of(context).colorScheme.background),
                       ),
                     ],
                   ),

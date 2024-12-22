@@ -8,14 +8,14 @@ class TimeWeatherWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       verticalDirection: VerticalDirection.up,
       mainAxisSize: MainAxisSize.max,
       children: <Widget>[
-        const TimeWidget(),
-        const WeatherWidget(),
+        TimeWidget(),
+        WeatherWidget(),
       ],
     );
   }

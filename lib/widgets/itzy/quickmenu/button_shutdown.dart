@@ -114,9 +114,9 @@ class TimersWidgetState extends State<TimersWidget> {
             borderRadius: BorderRadius.circular(5),
             gradient: LinearGradient(
               colors: <Color>[
-                Theme.of(context).backgroundColor,
-                Theme.of(context).backgroundColor.withAlpha(globalSettings.themeColors.gradientAlpha),
-                Theme.of(context).backgroundColor,
+                Theme.of(context).colorScheme.background,
+                Theme.of(context).colorScheme.background.withAlpha(globalSettings.themeColors.gradientAlpha),
+                Theme.of(context).colorScheme.background,
               ],
               stops: <double>[0, 0.4, 1],
               end: Alignment.bottomRight,
@@ -124,7 +124,7 @@ class TimersWidgetState extends State<TimersWidget> {
             boxShadow: <BoxShadow>[
               const BoxShadow(color: Colors.black26, offset: Offset(3, 5), blurStyle: BlurStyle.inner),
             ],
-            color: Theme.of(context).backgroundColor,
+            color: Theme.of(context).colorScheme.background,
           ),
           child: SingleChildScrollView(
             controller: ScrollController(),
@@ -154,7 +154,7 @@ class TimersWidgetState extends State<TimersWidget> {
                                     const Positioned(right: 20, bottom: 2, child: InfoText("Hours")),
                                     Container(
                                       decoration: BoxDecoration(
-                                        color: Theme.of(context).backgroundColor.withOpacity(0.6),
+                                        color: Theme.of(context).colorScheme.background.withOpacity(0.6),
                                         backgroundBlendMode: BlendMode.screen,
                                       ),
                                       margin: const EdgeInsets.only(right: 10),
@@ -206,7 +206,7 @@ class TimersWidgetState extends State<TimersWidget> {
                                     const Positioned(right: 5, bottom: 2, child: InfoText("Minutes")),
                                     Container(
                                       decoration: BoxDecoration(
-                                        color: Theme.of(context).backgroundColor.withOpacity(0.6),
+                                        color: Theme.of(context).colorScheme.background.withOpacity(0.6),
                                         backgroundBlendMode: BlendMode.screen,
                                       ),
                                       margin: const EdgeInsets.only(left: 10),
@@ -278,9 +278,6 @@ class TimersWidgetState extends State<TimersWidget> {
                                   child: DropdownButton2<String>(
                                     isExpanded: false,
                                     hint: Text("Type", style: TextStyle(fontSize: 14, color: Theme.of(context).hintColor)),
-                                    buttonPadding: const EdgeInsets.symmetric(horizontal: 5),
-                                    dropdownPadding: const EdgeInsets.all(1),
-                                    offset: const Offset(0, 30),
                                     isDense: true,
                                     style: const TextStyle(fontSize: 200),
                                     items: <String>["ShutDown in", "ShutDown at"]
@@ -291,10 +288,6 @@ class TimersWidgetState extends State<TimersWidget> {
                                       selectedTimerType = value;
                                       setState(() {});
                                     },
-                                    buttonHeight: 40,
-                                    buttonWidth: 200,
-                                    itemHeight: 30,
-                                    dropdownMaxHeight: 200,
                                   ),
                                 ),
                               ),

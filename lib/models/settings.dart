@@ -90,7 +90,7 @@ class Settings {
   /// Get Dark or Light Theme
   ThemeType get themeTypeMode {
     if (themeType == ThemeType.system) {
-      if (MediaQueryData.fromWindow(WidgetsBinding.instance.window).platformBrightness == Brightness.dark) return ThemeType.dark;
+      if (MediaQueryData.fromView(WidgetsBinding.instance.window).platformBrightness == Brightness.dark) return ThemeType.dark;
       return ThemeType.light;
     } else if (themeType == ThemeType.schedule) {
       final int minTime = globalSettings.themeScheduleMin;

@@ -11,13 +11,13 @@ class PinnedAndTrayList extends StatelessWidget {
     return Container(
       width: 280,
       height: 30,
-      child: Row(
+      child: const Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          const SizedBox(width: 5),
-          const Expanded(flex: 2, child: PinnedApps()),
-          const Expanded(flex: 2, child: Align(alignment: Alignment.centerRight, child: TrayBar())),
+          SizedBox(width: 5),
+          Expanded(flex: 2, child: PinnedApps()),
+          Expanded(flex: 2, child: Align(alignment: Alignment.centerRight, child: TrayBar())),
         ],
       ),
     );

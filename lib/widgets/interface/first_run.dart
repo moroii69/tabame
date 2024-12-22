@@ -80,7 +80,7 @@ class FirstRunState extends State<FirstRun> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Center(child: Text("First Run settings", style: Theme.of(context).textTheme.headline5?.copyWith(height: 2))),
+          Center(child: Text("First Run settings", style: Theme.of(context).textTheme.headlineSmall?.copyWith(height: 2))),
           LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
             return ConstrainedBox(
               constraints: BoxConstraints(maxWidth: constraints.maxWidth, maxHeight: 960),
@@ -99,7 +99,7 @@ class FirstRunState extends State<FirstRun> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text("Before anything, you need to set the main hotkey:", style: Theme.of(context).textTheme.button?.copyWith(height: 2)),
+                            Text("Before anything, you need to set the main hotkey:", style: Theme.of(context).textTheme.labelLarge?.copyWith(height: 2)),
                             if (hotkey.isNotEmpty)
                               InkWell(
                                 onTap: () async {
@@ -348,7 +348,7 @@ You can also scan folder sizes and delete files that are too big."""),
                           )
                         ],
                       ),
-                      Center(child: Text("Thanks for using Tabame", style: Theme.of(context).textTheme.headline5?.copyWith(height: 2))),
+                      Center(child: Text("Thanks for using Tabame", style: Theme.of(context).textTheme.headlineSmall?.copyWith(height: 2))),
                       const SizedBox(height: 10),
                       Center(
                           child: Text("After restarting I recommend to open settings and browse through all sidebar tabs",

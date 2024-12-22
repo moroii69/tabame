@@ -147,9 +147,9 @@ class TimersWidgetState extends State<TimersWidget> {
             borderRadius: BorderRadius.circular(5),
             gradient: LinearGradient(
               colors: <Color>[
-                Theme.of(context).backgroundColor,
-                Theme.of(context).backgroundColor.withAlpha(globalSettings.themeColors.gradientAlpha),
-                Theme.of(context).backgroundColor,
+                Theme.of(context).colorScheme.background,
+                Theme.of(context).colorScheme.background.withAlpha(globalSettings.themeColors.gradientAlpha),
+                Theme.of(context).colorScheme.background,
               ],
               stops: <double>[0, 0.4, 1],
               end: Alignment.bottomRight,
@@ -157,7 +157,7 @@ class TimersWidgetState extends State<TimersWidget> {
             boxShadow: <BoxShadow>[
               const BoxShadow(color: Colors.black26, offset: Offset(3, 5), blurStyle: BlurStyle.inner),
             ],
-            color: Theme.of(context).backgroundColor,
+            color: Theme.of(context).colorScheme.background,
           ),
           child: SingleChildScrollView(
             controller: ScrollController(),

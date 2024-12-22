@@ -82,7 +82,7 @@ class RunShortCutInfo extends StatelessWidget {
                                 child: SelectableText(
                                   example[index],
                                   toolbarOptions: const ToolbarOptions(copy: true, cut: true, paste: true, selectAll: true),
-                                  style: TextStyle(color: Theme.of(context).backgroundColor, fontSize: 12, height: 1.00001),
+                                  style: TextStyle(color: Theme.of(context).colorScheme.background, fontSize: 12, height: 1.00001),
                                 ),
                               )))),
                 ],

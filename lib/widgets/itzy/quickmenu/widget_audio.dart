@@ -292,9 +292,9 @@ class AudioBoxState extends State<AudioBox> {
             // border: Border.all(color: Theme.of(context).backgroundColor.withOpacity(0.5), width: 1),
             gradient: LinearGradient(
               colors: <Color>[
-                Theme.of(context).backgroundColor,
-                Theme.of(context).backgroundColor.withAlpha(globalSettings.themeColors.gradientAlpha),
-                Theme.of(context).backgroundColor,
+                Theme.of(context).colorScheme.background,
+                Theme.of(context).colorScheme.background.withAlpha(globalSettings.themeColors.gradientAlpha),
+                Theme.of(context).colorScheme.background,
               ],
               stops: <double>[0, 0.4, 1],
               end: Alignment.bottomRight,
@@ -302,7 +302,7 @@ class AudioBoxState extends State<AudioBox> {
             boxShadow: <BoxShadow>[
               const BoxShadow(color: Colors.black26, offset: Offset(3, 5), blurStyle: BlurStyle.inner),
             ],
-            color: Theme.of(context).backgroundColor,
+            color: Theme.of(context).colorScheme.background,
           ),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -365,8 +365,8 @@ class AudioBoxState extends State<AudioBox> {
                                     constraints: const BoxConstraints(minWidth: 280, maxHeight: 80),
                                     child: ScrollbarTheme(
                                       data: Theme.of(context).scrollbarTheme.copyWith(
-                                            thumbVisibility: MaterialStateProperty.all<bool>(true),
-                                            trackVisibility: MaterialStateProperty.all<bool>(true),
+                                            thumbVisibility: WidgetStateProperty.all<bool>(true),
+                                            trackVisibility: WidgetStateProperty.all<bool>(true),
                                           ),
                                       child: SingleChildScrollView(
                                         controller: ScrollController(),

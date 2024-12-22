@@ -27,14 +27,14 @@ class BottomBar extends StatelessWidget {
           builder: (BuildContext context, BoxConstraints constraints) => ConstrainedBox(
               constraints:
                   BoxConstraints(minWidth: constraints.minWidth, minHeight: constraints.minHeight, maxWidth: constraints.maxWidth, maxHeight: constraints.maxHeight),
-              child: Row(
+              child: const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 verticalDirection: VerticalDirection.down,
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  const Expanded(child: TimeWidget(inline: true)),
-                  const Padding(padding: EdgeInsets.symmetric(horizontal: 10), child: WeatherWidget(width: 80, showUnit: true)),
+                  Expanded(child: TimeWidget(inline: true)),
+                  Padding(padding: EdgeInsets.symmetric(horizontal: 10), child: WeatherWidget(width: 80, showUnit: true)),
                 ],
               )),
         );
@@ -49,7 +49,7 @@ class BottomBar extends StatelessWidget {
           type: MaterialType.transparency,
           child: Theme(
             data: Theme.of(context)
-                .copyWith(tooltipTheme: Theme.of(context).tooltipTheme.copyWith(preferBelow: false, decoration: BoxDecoration(color: Theme.of(context).backgroundColor))),
+                .copyWith(tooltipTheme: Theme.of(context).tooltipTheme.copyWith(preferBelow: false, decoration: BoxDecoration(color: Theme.of(context).colorScheme.background))),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,

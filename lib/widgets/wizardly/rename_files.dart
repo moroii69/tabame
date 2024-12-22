@@ -106,9 +106,9 @@ class FileNameWidgetState extends State<FileNameWidget> {
                                   if (mounted) setState(() {});
                                   Navigator.of(context).pop();
                                 },
-                                child: Text("Process", style: TextStyle(color: Theme.of(context).backgroundColor))),
+                                child: Text("Process", style: TextStyle(color: Theme.of(context).colorScheme.background))),
                             ElevatedButton(
-                                onPressed: () => Navigator.of(context).pop(), child: Text("Cancel", style: TextStyle(color: Theme.of(context).backgroundColor))),
+                                onPressed: () => Navigator.of(context).pop(), child: Text("Cancel", style: TextStyle(color: Theme.of(context).colorScheme.background))),
                           ],
                         );
                       },
@@ -440,8 +440,8 @@ class ListTileFileState extends State<ListTileFile> {
                 child: TextButton(
                     onPressed: () => widget.onRenamePressed(),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.resolveWith<Color>((Set<MaterialState> states) {
-                        if (states.contains(MaterialState.hovered)) {
+                      backgroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
+                        if (states.contains(WidgetState.hovered)) {
                           return Theme.of(context).primaryColor.withOpacity(0.5);
                         }
                         return Colors.transparent;

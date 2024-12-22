@@ -205,7 +205,7 @@ class _ThemeSetupWidgetState extends State<ThemeSetupWidget> {
           verticalOffset: 30,
           decoration: BoxDecoration(
             border: Border.all(width: 1, color: Colors.black26),
-            color: Theme.of(context).backgroundColor,
+            color: Theme.of(context).colorScheme.background,
           ),
           child: ListTile(
             leading: const Icon(Icons.save_outlined),
@@ -443,7 +443,7 @@ class CustomColorPicker extends StatelessWidget {
         width: 20,
         height: 20,
         borderRadius: 22,
-        subheading: Text('Select color shade', style: Theme.of(context).textTheme.subtitle1),
+        subheading: Text('Select color shade', style: Theme.of(context).textTheme.titleMedium),
       ),
     );
   }
@@ -511,7 +511,7 @@ class ListColors extends StatelessWidget {
                       width: 20,
                       height: 20,
                       borderRadius: 22,
-                      subheading: Text('Select color shade', style: Theme.of(context).textTheme.subtitle1),
+                      subheading: Text('Select color shade', style: Theme.of(context).textTheme.titleMedium),
                     ),
                     const SizedBox(width: 50)
                   ],

@@ -155,7 +155,7 @@ class FancyshotState extends State<Fancyshot> {
     if (File("$temp\\capture.png").existsSync()) {
       capture = File("$temp\\capture.png").readAsBytesSync();
       photo = img.decodeImage(capture!);
-      int pixel32 = photo!.getPixelSafe(0, 0);
+      int pixel32 = photo!.getPixelSafe(0, 0) as int;
       int hex = abgrToArgb(pixel32);
       bgColor = Color(hex);
     } else {
@@ -193,7 +193,7 @@ class FancyshotState extends State<Fancyshot> {
                           scrollDirection: Axis.horizontal,
                           child: MouseScrollWidget(
                               scrollDirection: Axis.vertical,
-                              child: Screenshot<Widget>(
+                              child: Screenshot(
                                 controller: screenshotController,
                                 child: Material(
                                   type: MaterialType.transparency,
@@ -436,9 +436,6 @@ class FancyshotState extends State<Fancyshot> {
                                 color: Theme.of(context).hintColor,
                               ),
                             ),
-                            buttonPadding: const EdgeInsets.symmetric(horizontal: 5),
-                            dropdownPadding: const EdgeInsets.all(1),
-                            offset: const Offset(0, 40),
                             isDense: true,
                             style: const TextStyle(fontSize: 200),
                             items: profilesName
@@ -456,50 +453,6 @@ class FancyshotState extends State<Fancyshot> {
                                 Boxes.pref.setString("fancyshot", value);
                               }
                               setState(() {});
-                            },
-                            buttonHeight: 40,
-                            buttonWidth: 200,
-                            itemHeight: 30,
-                            dropdownMaxHeight: 200,
-                            searchController: textEditingController,
-                            searchInnerWidget: Padding(
-                              padding: const EdgeInsets.only(
-                                top: 8,
-                                bottom: 4,
-                                right: 8,
-                                left: 8,
-                              ),
-                              child: TextFormField(
-                                controller: textEditingController,
-                                decoration: InputDecoration(
-                                  isDense: true,
-                                  contentPadding: const EdgeInsets.symmetric(
-                                    horizontal: 10,
-                                    vertical: 8,
-                                  ),
-                                  hintText: 'Create Profile (press Enter)',
-                                  hintStyle: const TextStyle(fontSize: 12),
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                ),
-                                onFieldSubmitted: (String? newValue) {
-                                  if (newValue == null) return;
-                                  if (newValue.isEmpty) return;
-                                  profiles.add(filters.copyWith(name: newValue));
-                                  profilesName.add(newValue);
-                                  if (profilesName.contains("")) profilesName.remove("");
-                                  Boxes.updateSettings("fancyShotProfile", jsonEncode(profiles));
-                                  Boxes.updateSettings("fancyshot", newValue);
-                                  textEditingController.clear();
-                                  selectedProfile = newValue;
-
-                                  setState(() {});
-                                },
-                              ),
-                            ),
-                            searchMatchFn: (DropdownMenuItem<dynamic> item, String searchValue) {
-                              return true;
                             },
                             onMenuStateChange: (bool isOpen) {
                               if (!isOpen) {
@@ -1249,7 +1202,7 @@ class FancyShot {
     if (File("$temp\\capture.png").existsSync()) {
       capture = File("$temp\\capture.png").readAsBytesSync();
       photo = img.decodeImage(capture!);
-      int pixel32 = photo!.getPixelSafe(0, 0);
+      int pixel32 = photo!.getPixelSafe(0, 0) as int;
       int hex = abgrToArgb(pixel32);
       bgColor = Color(hex);
     } else {

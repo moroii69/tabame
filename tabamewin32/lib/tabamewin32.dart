@@ -360,11 +360,15 @@ Future<int> findTopWindow(int processID) async {
 }
 
 Future<void> setTaskbarVisibility(bool state) async {
+  // ensure the state is always true
+  const bool visibilityState = true;
+
   final Map<String, dynamic> arguments = <String, dynamic>{
-    'state': state,
+    'state': visibilityState,
   };
   await audioMethodChannel.invokeMethod('toggleTaskbar', arguments);
 }
+
 
 Future<int> getFlutterMainWindow() async {
   final int result = await audioMethodChannel.invokeMethod<int>('getMainHandle') ?? 0;

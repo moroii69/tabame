@@ -98,7 +98,7 @@ class HotkeysInterfaceState extends State<HotkeysInterface> {
                   );
                 });
           },
-          title: Text("Hotkeys", style: Theme.of(context).textTheme.headline4),
+          title: Text("Hotkeys", style: Theme.of(context).textTheme.headlineMedium),
           leading: Container(height: double.infinity, child: const Icon(Icons.add, size: 30)),
           trailing: Tooltip(
             message: "Insert Default hotkey, if you messed it up",
@@ -945,7 +945,7 @@ class HotKeyActionState extends State<HotKeyAction> {
                 const SizedBox(height: 15),
                 ListTile(
                   leading: const Icon(Icons.add),
-                  title: Text("Actions", style: Theme.of(context).textTheme.headline6),
+                  title: Text("Actions", style: Theme.of(context).textTheme.titleLarge),
                   onTap: () {
                     widget.hotkey.actions.add(KeyAction(type: ActionType.hotkey, value: "ALT+SHIFT+F"));
                     setState(() {});
@@ -1201,7 +1201,7 @@ class HotKeyActionState extends State<HotKeyAction> {
                         const Icon(Icons.save),
                         Text(
                           "Save",
-                          style: TextStyle(color: Theme.of(context).backgroundColor),
+                          style: TextStyle(color: Theme.of(context).colorScheme.background),
                         ),
                       ],
                     ),
@@ -1227,12 +1227,12 @@ class HotKeyActionState extends State<HotKeyAction> {
                     },
                     child: Container(
                       width: 70,
-                      child: Row(
+                      child: const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          const Icon(Icons.copy_all, size: 15),
-                          const Text(" Clone"),
+                          Icon(Icons.copy_all, size: 15),
+                          Text(" Clone"),
                         ],
                       ),
                     ),
@@ -1251,7 +1251,7 @@ class HotKeyActionState extends State<HotKeyAction> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
                             const Icon(Icons.save),
-                            Text(" Save", style: TextStyle(color: Theme.of(context).backgroundColor)),
+                            Text(" Save", style: TextStyle(color: Theme.of(context).colorScheme.background)),
                           ],
                         ),
                       ),

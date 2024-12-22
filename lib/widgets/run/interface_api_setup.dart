@@ -282,7 +282,7 @@ class ModifyApiInfoState extends State<ModifyApiInfo> {
                 ),
               ),
               ElevatedButton(
-                child: Text("Test", style: TextStyle(color: Theme.of(context).backgroundColor)),
+                child: Text("Test", style: TextStyle(color: Theme.of(context).colorScheme.background)),
                 onPressed: () {
                   final Map<String, String> headers = <String, String>{};
                   String data = widget.api.data.join("&");

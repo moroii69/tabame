@@ -58,7 +58,7 @@ class _TopBarState extends State<TopBar> with QuickMenuTriggers {
       data: Theme.of(context).copyWith(
           iconTheme: const IconThemeData(size: 16),
           hoverColor: Colors.grey.withAlpha(50),
-          tooltipTheme: Theme.of(context).tooltipTheme.copyWith(decoration: BoxDecoration(color: Theme.of(context).backgroundColor), preferBelow: false)),
+          tooltipTheme: Theme.of(context).tooltipTheme.copyWith(decoration: BoxDecoration(color: Theme.of(context).colorScheme.background), preferBelow: false)),
       child: IconTheme(
         data: IconThemeData(
           size: 16,
@@ -134,7 +134,7 @@ class _TopBarState extends State<TopBar> with QuickMenuTriggers {
                                 WinUtils.run("powershell", arguments: "Install-Module -Name AudioDeviceCmdlets -Force -Verbose;");
                                 1 + 1 == 2
                                     ? true
-                                    : WinUtils.runPowerShell([
+                                    : WinUtils.runPowerShell(<String>[
                                         r"""
 If (! (Get-Module -Name "AudioDeviceCmdlets" -ListAvailable)) { 
 Install-Module -Name AudioDeviceCmdlets -Force -Verbose;

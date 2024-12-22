@@ -5,7 +5,7 @@
 list(APPEND FLUTTER_PLUGIN_LIST
   contextual_menu
   local_notifier
-  screen_retriever
+  screen_retriever_windows
   tabamewin32
   window_manager
 )

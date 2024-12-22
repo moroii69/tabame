@@ -35,7 +35,7 @@ class QuickmenuTopbarState extends State<QuickmenuTopbar> {
         minLeadingWidth: 10,
         child: Column(
           children: <Widget>[
-            ListTile(title: Text("QuickActions Order", style: Theme.of(context).textTheme.headline6)),
+            ListTile(title: Text("QuickActions Order", style: Theme.of(context).textTheme.titleLarge)),
             Flexible(
               fit: FlexFit.loose,
               child: MouseRegion(

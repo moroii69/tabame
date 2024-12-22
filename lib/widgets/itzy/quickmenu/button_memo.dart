@@ -108,9 +108,9 @@ class TimersWidgetState extends State<TimersWidget> {
             borderRadius: BorderRadius.circular(5),
             gradient: LinearGradient(
               colors: <Color>[
-                Theme.of(context).backgroundColor,
-                Theme.of(context).backgroundColor.withAlpha(globalSettings.themeColors.gradientAlpha),
-                Theme.of(context).backgroundColor,
+                Theme.of(context).colorScheme.background,
+                Theme.of(context).colorScheme.background.withAlpha(globalSettings.themeColors.gradientAlpha),
+                Theme.of(context).colorScheme.background,
               ],
               stops: <double>[0, 0.4, 1],
               end: Alignment.bottomRight,
@@ -118,7 +118,7 @@ class TimersWidgetState extends State<TimersWidget> {
             boxShadow: <BoxShadow>[
               const BoxShadow(color: Colors.black26, offset: Offset(3, 5), blurStyle: BlurStyle.inner),
             ],
-            color: Theme.of(context).backgroundColor,
+            color: Theme.of(context).colorScheme.background,
           ),
           child: MouseScrollWidget(
             scrollDirection: Axis.vertical,
@@ -140,7 +140,7 @@ class TimersWidgetState extends State<TimersWidget> {
                                     width: 40,
                                     child: IconButton(splashRadius: 15, icon: const Icon(Icons.arrow_back), onPressed: () => setState(() => memoSelected = -1))),
                                 Text(memos.elementAt(memoSelected)[0].isEmpty ? "New Item" : memos.elementAt(memoSelected)[0],
-                                    style: Theme.of(context).textTheme.headline6?.copyWith(height: 1))
+                                    style: Theme.of(context).textTheme.titleLarge?.copyWith(height: 1))
                               ],
                             ),
                           ),

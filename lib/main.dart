@@ -236,19 +236,22 @@ class _TabameState extends State<Tabame> {
                 title: 'Tabame - Taskbar Menu',
                 theme: ThemeData.light().copyWith(
                   splashColor: Color.fromARGB(225, 0, 0, 0),
-                  backgroundColor: Color(globalSettings.lightTheme.background),
                   dialogBackgroundColor: Color(globalSettings.lightTheme.background),
                   cardColor: Color(globalSettings.lightTheme.background),
-                  errorColor: Color(globalSettings.lightTheme.accentColor),
                   iconTheme: ThemeData.light().iconTheme.copyWith(color: Color(globalSettings.lightTheme.textColor)),
                   textTheme: ThemeData.light().textTheme.apply(
                       bodyColor: Color(globalSettings.lightTheme.textColor),
                       displayColor: Color(globalSettings.lightTheme.textColor),
                       decorationColor: Color(globalSettings.lightTheme.textColor)),
-                  toggleableActiveColor: Color(globalSettings.lightTheme.accentColor),
-                  checkboxTheme: ThemeData.light()
-                      .checkboxTheme
-                      .copyWith(visualDensity: VisualDensity.compact, checkColor: MaterialStateProperty.all(Color(globalSettings.lightTheme.background))),
+                                    checkboxTheme: ThemeData.light()
+                                        .checkboxTheme
+                                        .copyWith(visualDensity: VisualDensity.compact, checkColor: MaterialStateProperty.all(Color(globalSettings.lightTheme.background))).copyWith(
+                   fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+                   if (states.contains(MaterialState.disabled)) { return null; }
+                   if (states.contains(MaterialState.selected)) { return Color(globalSettings.lightTheme.accentColor); }
+                   return null;
+                   }),
+                   ),
                   tooltipTheme: ThemeData.light().tooltipTheme.copyWith(
                         verticalOffset: 10,
                         padding: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
@@ -257,18 +260,40 @@ class _TabameState extends State<Tabame> {
                         textStyle: TextStyle(color: Color(globalSettings.lightTheme.textColor), fontSize: 12, height: 0),
                         decoration: BoxDecoration(color: Color(globalSettings.lightTheme.background)),
                         preferBelow: false,
-                      ),
-                  colorScheme: ThemeData.light().colorScheme.copyWith(
+                      ), checkboxTheme: ThemeData.light()
+                      .checkboxTheme
+                      .copyWith(visualDensity: VisualDensity.compact, checkColor: MaterialStateProperty.all(Color(globalSettings.lightTheme.background))).copyWith(
+ fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+ if (states.contains(MaterialState.disabled)) { return null; }
+ if (states.contains(MaterialState.selected)) { return Color(globalSettings.lightTheme.accentColor); }
+ return null;
+ }),
+ ), radioTheme: RadioThemeData(
+ fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+ if (states.contains(MaterialState.disabled)) { return null; }
+ if (states.contains(MaterialState.selected)) { return Color(globalSettings.lightTheme.accentColor); }
+ return null;
+ }),
+ ), switchTheme: SwitchThemeData(
+ thumbColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+ if (states.contains(MaterialState.disabled)) { return null; }
+ if (states.contains(MaterialState.selected)) { return Color(globalSettings.lightTheme.accentColor); }
+ return null;
+ }),
+ trackColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+ if (states.contains(MaterialState.disabled)) { return null; }
+ if (states.contains(MaterialState.selected)) { return Color(globalSettings.lightTheme.accentColor); }
+ return null;
+ }),
+ ), colorScheme: ThemeData.light().colorScheme.copyWith(
                         primary: Color(globalSettings.lightTheme.accentColor),
                         secondary: Color(globalSettings.lightTheme.accentColor),
-                      ),
+                      ).copyWith(background: Color(globalSettings.lightTheme.background)).copyWith(error: Color(globalSettings.lightTheme.accentColor)),
                 ),
                 darkTheme: ThemeData.dark().copyWith(
                   splashColor: Color.fromARGB(225, 0, 0, 0),
-                  backgroundColor: Color(globalSettings.darkTheme.background),
                   dialogBackgroundColor: Color(globalSettings.darkTheme.background),
                   cardColor: Color(globalSettings.darkTheme.background),
-                  errorColor: Color(globalSettings.darkTheme.accentColor),
                   iconTheme: ThemeData.dark().iconTheme.copyWith(color: Color(globalSettings.darkTheme.textColor)),
                   textTheme: ThemeData.dark().textTheme.apply(
                         bodyColor: Color(globalSettings.darkTheme.textColor),
@@ -279,10 +304,9 @@ class _TabameState extends State<Tabame> {
                       style: ElevatedButton.styleFrom(
                     foregroundColor: Color(globalSettings.darkTheme.background),
                   )),
-                  toggleableActiveColor: Color(globalSettings.darkTheme.accentColor),
                   checkboxTheme: ThemeData.dark()
                       .checkboxTheme
-                      .copyWith(visualDensity: VisualDensity.compact, checkColor: MaterialStateProperty.all(Color(globalSettings.darkTheme.background))),
+                      .copyWith(visualDensity: VisualDensity.compact, checkColor: WidgetStateProperty.all(Color(globalSettings.darkTheme.background))),
                   tooltipTheme: ThemeData.dark().tooltipTheme.copyWith(
                         verticalOffset: 10,
                         padding: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
@@ -292,15 +316,39 @@ class _TabameState extends State<Tabame> {
                         decoration: BoxDecoration(color: Color(globalSettings.darkTheme.background)),
                         preferBelow: false,
                       ),
-                  colorScheme: ThemeData.dark().colorScheme.copyWith(
+                  buttonTheme: ThemeData.dark().buttonTheme.copyWith(
+                        textTheme: ButtonTextTheme.primary,
+                        colorScheme: Theme.of(context).colorScheme.copyWith(primary: Theme.of(context).colorScheme.background),
+                      ), checkboxTheme: ThemeData.dark()
+                      .checkboxTheme
+                      .copyWith(visualDensity: VisualDensity.compact, checkColor: MaterialStateProperty.all(Color(globalSettings.darkTheme.background))).copyWith(
+ fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+ if (states.contains(MaterialState.disabled)) { return null; }
+ if (states.contains(MaterialState.selected)) { return Color(globalSettings.darkTheme.accentColor); }
+ return null;
+ }),
+ ), radioTheme: RadioThemeData(
+ fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+ if (states.contains(MaterialState.disabled)) { return null; }
+ if (states.contains(MaterialState.selected)) { return Color(globalSettings.darkTheme.accentColor); }
+ return null;
+ }),
+ ), switchTheme: SwitchThemeData(
+ thumbColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+ if (states.contains(MaterialState.disabled)) { return null; }
+ if (states.contains(MaterialState.selected)) { return Color(globalSettings.darkTheme.accentColor); }
+ return null;
+ }),
+ trackColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+ if (states.contains(MaterialState.disabled)) { return null; }
+ if (states.contains(MaterialState.selected)) { return Color(globalSettings.darkTheme.accentColor); }
+ return null;
+ }),
+ ), colorScheme: ThemeData.dark().colorScheme.copyWith(
                         primary: Color(globalSettings.darkTheme.accentColor),
                         secondary: Color(globalSettings.darkTheme.accentColor),
                         tertiary: Color(globalSettings.darkTheme.textColor),
-                      ),
-                  buttonTheme: ThemeData.dark().buttonTheme.copyWith(
-                        textTheme: ButtonTextTheme.primary,
-                        colorScheme: Theme.of(context).colorScheme.copyWith(primary: Theme.of(context).backgroundColor),
-                      ),
+                      ).copyWith(background: Color(globalSettings.darkTheme.background)).copyWith(error: Color(globalSettings.darkTheme.accentColor)),
                 ),
                 themeMode: themeMode,
                 home: PageView.builder(

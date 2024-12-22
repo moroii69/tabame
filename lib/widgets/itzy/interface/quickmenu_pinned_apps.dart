@@ -39,7 +39,7 @@ class QuickmenuPinnedAppsState extends State<QuickmenuPinnedApps> {
             children: <Widget>[
               Center(
                 child: ListTile(
-                  title: Text("Pinned Files", style: Theme.of(context).textTheme.headline6),
+                  title: Text("Pinned Files", style: Theme.of(context).textTheme.titleLarge),
                   trailing: IconButton(
                     icon: const Icon(Icons.add),
                     splashRadius: 20,

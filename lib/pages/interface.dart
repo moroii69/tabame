@@ -272,7 +272,7 @@ class InterfaceState extends State<Interface> with SingleTickerProviderStateMixi
                                 spreadRadius: 0.5,
                               )
                             ],
-                            color: Theme.of(context).backgroundColor,
+                            color: Theme.of(context).colorScheme.background,
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -362,9 +362,9 @@ class InterfaceState extends State<Interface> with SingleTickerProviderStateMixi
                           interfaceConstraints = mainConstraints;
                           return DecoratedBox(
                             decoration: BoxDecoration(
-                                color: Theme.of(context).backgroundColor,
+                                color: Theme.of(context).colorScheme.background,
                                 gradient: LinearGradient(
-                                  colors: <Color>[Theme.of(context).backgroundColor, Theme.of(context).backgroundColor.withAlpha(180), Theme.of(context).backgroundColor],
+                                  colors: <Color>[Theme.of(context).colorScheme.background, Theme.of(context).colorScheme.background.withAlpha(180), Theme.of(context).colorScheme.background],
                                   stops: <double>[0, 0.4, 1],
                                   end: Alignment.bottomRight,
                                 )),
@@ -465,24 +465,24 @@ class InterfaceState extends State<Interface> with SingleTickerProviderStateMixi
                                                                     WinUtils.closeAllTabameExProcesses();
                                                                     exit(0);
                                                                   },
-                                                                  child: Text("Full Exit", style: TextStyle(color: Theme.of(context).backgroundColor))),
+                                                                  child: Text("Full Exit", style: TextStyle(color: Theme.of(context).colorScheme.background))),
                                                               ElevatedButton(
                                                                   onPressed: () => Navigator.of(context).pop(),
-                                                                  child: Text("Cancel", style: TextStyle(color: Theme.of(context).backgroundColor))),
+                                                                  child: Text("Cancel", style: TextStyle(color: Theme.of(context).colorScheme.background))),
                                                             ],
                                                           ));
                                                 }),
-                                                child: Padding(
-                                                  padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+                                                child: const Padding(
+                                                  padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
                                                   child: Row(
                                                     mainAxisAlignment: MainAxisAlignment.start,
                                                     crossAxisAlignment: CrossAxisAlignment.center,
                                                     mainAxisSize: MainAxisSize.min,
                                                     children: <Widget>[
-                                                      const SizedBox(width: 5),
-                                                      const Icon(Icons.exit_to_app),
-                                                      const SizedBox(width: 5),
-                                                      const Text("Exit"),
+                                                      SizedBox(width: 5),
+                                                      Icon(Icons.exit_to_app),
+                                                      SizedBox(width: 5),
+                                                      Text("Exit"),
                                                     ],
                                                   ),
                                                 ),

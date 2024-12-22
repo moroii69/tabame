@@ -20,25 +20,25 @@ class TasksPageState extends State<TasksPage> {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            const Expanded(
+            Expanded(
               flex: 2,
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 5),
                 child: TasksReminders(),
               ),
             ),
-            const VerticalDivider(
+            VerticalDivider(
               width: 10,
               thickness: 2,
               indent: 0,
               endIndent: 0,
               // color: Colors.white,
             ),
-            const Expanded(
+            Expanded(
               flex: 2,
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 5),

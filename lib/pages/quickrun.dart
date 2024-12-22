@@ -259,7 +259,7 @@ class QuickRunState extends State<QuickRun> {
                                           Clipboard.setData(ClipboardData(text: item));
                                         }
                                       } else {
-                                        Clipboard.setData(ClipboardData(text: result.actions.containsKey(item) ? result.actions[item] : item));
+                                        Clipboard.setData(ClipboardData(text: result.actions.containsKey(item) ? result.actions[item]! : item));
                                       }
                                       setState(() => copied = index);
                                       Future<void>.delayed(const Duration(seconds: 1), () {
@@ -504,14 +504,12 @@ class Parsers {
         return (e.name as T);
       }
     }
-    if (matched == null) {
-      for (T type in names) {
-        if (type.toString().toLowerCase().split(".").last == from) {
-          return type;
-        }
+    for (T type in names) {
+      if (type.toString().toLowerCase().split(".").last == from) {
+        return type;
       }
     }
-    return null;
+      return null;
   }
 
   final NumberFormat format = NumberFormat("#,##0.00", "en_US");
